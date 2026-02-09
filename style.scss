@@ -1,9 +1,7 @@
-// Переменные
 $primary-color: #3498db;
 $secondary-color: #2ecc71;
 $card-padding: 20px;
 
-// Миксин для теней
 @mixin box-shadow($level) {
   @if $level == 'light' {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -12,7 +10,6 @@ $card-padding: 20px;
   }
 }
 
-// Карточка товара
 .product-card {
   padding: $card-padding;
   border: 1px solid #ddd;
@@ -21,7 +18,6 @@ $card-padding: 20px;
   margin: 20px auto;
   @include box-shadow('light');
 
-  // Вложенность
   &__image {
     width: 100%;
     border-radius: 8px;
