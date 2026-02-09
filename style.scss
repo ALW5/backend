@@ -1,0 +1,56 @@
+// Переменные
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$card-padding: 20px;
+
+// Миксин для теней
+@mixin box-shadow($level) {
+  @if $level == 'light' {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  } @else {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+}
+
+// Карточка товара
+.product-card {
+  padding: $card-padding;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: 20px auto;
+  @include box-shadow('light');
+
+  // Вложенность
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__title {
+    font-size: 22px;
+    color: $primary-color;
+    margin: 10px 0;
+  }
+
+  &__description {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__btn {
+    background: $secondary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+
+    &:hover {
+      background: darken($secondary-color, 10%);
+    }
+  }
+}
